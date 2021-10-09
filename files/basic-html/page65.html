@@ -152,65 +152,73 @@ function MM_swapImage() { //v3.0
     </div>
 
     <p class="use-as-video-title"></p>
-    <pre style="white-space:pre-line"><code>and nickel in blood samples of 25 victims from the 45 samples sent by the
-          Government. Public health experts and scientists from various agencies
-
-          are waiting for detailed reports of analysis of blood and water samples, but
-
-          the primary suspicion is that of water contamination by heavy metals. Sci-
-          entists suspect pesticide or insecticide to have seeped into drinking water
-          sources.
+    <pre style="white-space:pre-line"><code>CASE STUDIES
 
 
 
 
-          The district administration and Eluru Municipal Corporation officials had
-          also investigated this case and found that Eluru receives water through
-          canals from both Godavari and Krishna rivers. The canals pass through ag-
+           employee’s desire to help a colleague and, perhaps, act first and think lat-
 
-          ricultural fields where runoff laced with pesticides mixes with water in the
-
-          canals. Many aspects of the mystery illness have baffled scientists. People
-          who only use packaged drinking water have also fallen sick.
-
-
-          Who was involved in the investigation?
-          Who was involved in the investigation?
-
-
-          While AIIMS, New Delhi, has tested blood, water, and milk samples for
-          heavy metals, the Centre for Cellular and Molecular Biology (CCMB) Hy-
-
-          derabad, is testing for pathogens. The National Institute for Nutrition, Hy-
-
-          derabad, had tested samples of urine, blood, water vegetables, fruits and
-          other consumables for traces of heavy metals and pesticides. The Indian
-          Institute of Chemical Technology is testing water and blood samples for
-
-          traces of pesticides.
+           er.”
 
 
 
-          While lead and pesticides continue to be concentrated upon, forensic toxi-
-          cologists and chemists were given significant preference for further inves-
+           Attack Methodology:
+           Attack Methodology:
+           The first line of attack was through social engineering. The threat actor
 
-          tigations. Investigations pertaining to other pathogens and probable sourc-
+           pretended to be a company employee, specifically one of the system en-
 
-          es are also being carried out.
+           gineers. The e-mail exactly mimicked an invitation from cloud service and
+           was pretending to appear as sort of a weekly report. Given the impersonat-
+           ed sender’s actual role within the company, this wasn’t only expected, but
+
+           the specified document.
 
 
-          Conclusion:
-          Conclusion:
+
+           They used servers that allow them to send an e-mail anonymously, which
+           is how they managed to defeat the Security Protection Factor (SPF) within
+
+           the place to stop the victim’s domain from being spoofed.
 
 
 
-          Forensic toxicology is an es-
-          sential  component  of  vari-
-          ous medical and legal inves-
+           Several links inside the email body, including the one to just accept the  in-
+           vitation, had been replaced with bit.ly shortened URLs. But all the servers
 
-          tigations.  The  field  covers
+           were down at the time of the investigation.
 
-          numerous crimes involving
+
+
+           When the target clicked the primary link, the link triggered a download of
+           a .zip file, and inside that zip file were two more files named “Password.
+
+           txt.lnk”: the “weekly_report.doc” file was password protected which made
+
+           the target more convinced that files are genuine.
+
+
+           The string is executed as a script (see Appendix 2) which connects to a
+
+           different server that requests to send the “main.cs” file, which got decod-
+
+           ed from Base64 so it got passed as a script block. This script or the initial
+           download file wasn’t retrieved on the filesystem; however, at the same
+           time, the Event Log started showing messages containing parts of Pow-
+
+           erShell code (channel Microsoft-Windows-PowerShell/Operational, event
+
+           ID 4104). Pieced together, this code was found to perform several tasks:
+
+
+           • Writes a long string, which decodes to a script, to the user’s APPDATA
+
+           followed by “\Microsoft\Windows\Start Menu\Programs\Startup\appView.
+
+           js”;
+
+
 
 
 
